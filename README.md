@@ -10,7 +10,7 @@
   </a>
 </p>
 
-> :rocket: Repositor of class "Desenvolvimento de Aplicação Orientada a Componentes ".
+> :rocket: Repository of class "Desenvolvimento de Aplicação Orientada a Componentes ".
 
 <div align="center">
   <sub> Built with ❤︎ by
