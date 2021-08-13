@@ -1,0 +1,22 @@
+/* Main */
+.carousel-img img {
+  height: 400px;
+}
+
+.space {
+  margin-top: 2rem;
+}
+
+footer {
+  padding: 4rem 0;
+}
+
+footer p {
+  margin-bottom: 0px;
+}
+
+@media (max-width: 768px) {
+  .carousel-img img {
+    height: 200px;
+  }
+}
