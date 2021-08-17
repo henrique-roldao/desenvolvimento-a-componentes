@@ -31,7 +31,8 @@
 
 
 # :eyes: Demo Website
-👉  Template #1: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-1-revisao/)
+👉  Template #1 - LP: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-1-revisao/)
+👉  Template #2 - Dashboard: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-2-revisao/)
 
 # :computer: Technologies
 This project was made using the follow technologies:
