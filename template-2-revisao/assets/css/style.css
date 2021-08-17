@@ -1,0 +1,37 @@
+:root {
+  --backgroundColor: #242c39;
+  --white: #fff;
+}
+
+body {
+  background: var(--backgroundColor);
+}
+
+main {
+  padding: 0 !important;
+}
+
+section {
+  height: 100vh;
+  background: var(--white);
+}
+
+.form-main {
+  margin: 0 2rem;
+}
+
+.user-perfil {
+  margin-left: 2rem;
+  max-width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  section {
+    margin-top: 2rem;
+  }
+}
