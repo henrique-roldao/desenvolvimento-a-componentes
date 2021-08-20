@@ -1,0 +1,42 @@
+<form action="#">
+  <div class="mb-3">
+    <label for="contact_name" class="form-label">Nome</label>
+    <input type="text" id="name_form" class="form-control" id="contact_name" />
+  </div>
+  <div class="mb-3">
+    <label for="contact_email" class="form-label">Email</label>
+    <input
+      id="email_form"
+      type="email"
+      class="form-control"
+      id="contact_email"
+      aria-describedby="emailHelp"
+    />
+    <div id="emailHelp" class="form-text">
+      We'll never share your email with anyone else.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="contact_phone" class="form-label">Telefone</label>
+    <input
+      id="phone_form"
+      type="text"
+      class="form-control"
+      id="contact_phone"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="contact_subject" class="form-label">Assunto</label>
+    <textarea
+      id="subject_form"
+      class="form-control"
+      id="contact_subject"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+
+  <button type="submit" onclick="LoadPerson()" class="mb-3 btn btn-primary">
+    Submit
+  </button>
+</form>
