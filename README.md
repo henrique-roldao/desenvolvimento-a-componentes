@@ -31,7 +31,7 @@
 
 
 # :eyes: Demo Website
-👉  Template #1 - LP: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-1-revisao/)
+👉  Template #1 - LP: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-1-revisao/) <br>
 👉  Template #2 - Dashboard: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-2-revisao/)
 
 # :computer: Technologies
