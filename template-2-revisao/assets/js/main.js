@@ -31,19 +31,34 @@ function LoadPerson() {
     name: document.querySelector("#name_form").value,
     email: document.querySelector("#email_form").value,
     phone: document.querySelector("#phone_form").value,
+    cep: document.querySelector("#cep_form").value,
     subject: document.querySelector("#subject_form").value,
   };
-  $(".testeJs").load("views/person.html", function () {
-    var teste = document.querySelector("#namePerson");
-    teste.innerHTML = `${Person.name}`;
 
-    var teste = document.querySelector("#emailPerson");
-    teste.innerHTML = `${Person.email}`;
+  getLocal(Person.cep, function (data) {
+    Person.data = data;
 
-    var teste = document.querySelector("#phonePerson");
-    teste.innerHTML = `${Person.phone}`;
+    $(".testeJs").load("views/person.html", function () {
+      var teste = document.querySelector("#namePerson");
+      teste.innerHTML = `${Person.name}`;
 
-    var teste = document.querySelector("#subjectPerson");
-    teste.innerHTML = `${Person.subject}`;
+      var teste = document.querySelector("#emailPerson");
+      teste.innerHTML = `${Person.email}`;
+
+      var teste = document.querySelector("#phonePerson");
+      teste.innerHTML = `${Person.phone}`;
+
+      var teste = document.querySelector("#cepPerson");
+      teste.innerHTML = `${Person.data}`;
+
+      var teste = document.querySelector("#subjectPerson");
+      teste.innerHTML = `${Person.subject}`;
+    });
+  });
+}
+
+function getLocal(cep, callBack) {
+  $.getJSON(`http://viacep.com.br/ws/${cep}/json`, function (data) {
+    return callBack(data.localidade);
   });
 }
