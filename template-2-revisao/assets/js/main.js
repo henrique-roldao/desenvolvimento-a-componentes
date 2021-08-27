@@ -36,7 +36,8 @@ function LoadPerson() {
   };
 
   getLocal(Person.cep, function (data) {
-    Person.data = data;
+    Person.data = data.localidade;
+    Person.uf = data.uf;
 
     $(".testeJs").load("views/person.html", function () {
       var teste = document.querySelector("#namePerson");
@@ -49,7 +50,7 @@ function LoadPerson() {
       teste.innerHTML = `${Person.phone}`;
 
       var teste = document.querySelector("#cepPerson");
-      teste.innerHTML = `${Person.data}`;
+      teste.innerHTML = `${Person.data} - ${Person.uf}`;
 
       var teste = document.querySelector("#subjectPerson");
       teste.innerHTML = `${Person.subject}`;
@@ -59,6 +60,6 @@ function LoadPerson() {
 
 function getLocal(cep, callBack) {
   $.getJSON(`https://viacep.com.br/ws/${cep}/json`, function (data) {
-    return callBack(data.localidade);
+    return callBack(data);
   });
 }
