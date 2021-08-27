@@ -58,7 +58,7 @@ function LoadPerson() {
 }
 
 function getLocal(cep, callBack) {
-  $.getJSON(`http://viacep.com.br/ws/${cep}/json`, function (data) {
+  $.getJSON(`https://viacep.com.br/ws/${cep}/json`, function (data) {
     return callBack(data.localidade);
   });
 }
