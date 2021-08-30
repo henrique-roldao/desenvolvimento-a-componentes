@@ -41,6 +41,7 @@ This project was made using the follow technologies:
 * [CSS](https://www.w3schools.com/css/default.asp)      
 * [Javascript](https://www.w3schools.com/js/default.asp)   
 * [Bootstrap](https://getbootstrap.com/) 
+* [Jquerry](https://jquery.com/) 
 
 
 # :bug: Issues
