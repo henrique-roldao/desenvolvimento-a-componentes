@@ -33,7 +33,6 @@
 # :eyes: Demo Website
 👉  Template #1 - LP: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-1-revisao/) <br>
 👉  Template #2 - Dashboard: [Deploy in Github Pages](https://henrique-roldao.github.io/desenvolvimento-a-componentes/template-2-revisao/) <br>
-👉
 
 # :computer: Technologies
 This project was made using the follow technologies:
@@ -43,6 +42,8 @@ This project was made using the follow technologies:
 * [Javascript](https://www.w3schools.com/js/default.asp)   
 * [Bootstrap](https://getbootstrap.com/) 
 * [Jquerry](https://jquery.com/) 
+* [React](https://pt-br.reactjs.org/)
+* Props, UseState, Router DOM
 
 
 # :bug: Issues
