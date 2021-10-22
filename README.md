@@ -43,7 +43,7 @@ This project was made using the follow technologies:
 * [Bootstrap](https://getbootstrap.com/) 
 * [Jquerry](https://jquery.com/) 
 * [React](https://pt-br.reactjs.org/)
-* Props, UseState, Router DOM
+* Props, UseState, Router DOM, React Hook Form, 
 
 
 # :bug: Issues
