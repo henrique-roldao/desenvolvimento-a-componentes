@@ -4,6 +4,7 @@ import Home from '../Home';
 import About from '../About';
 import Products from '../Products';
 import Contact from '../Contact';
+import ContactView from '../ContactView';
 
 function Section(){
   return (
@@ -23,6 +24,10 @@ function Section(){
 
           <Route exact path="/contact">
             <Contact></Contact>
+          </Route>
+
+          <Route exact path="/contact/view">
+            <ContactView></ContactView>
           </Route>
         </Switch>
     </section>
