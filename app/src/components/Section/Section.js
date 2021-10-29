@@ -8,7 +8,7 @@ import ContactView from '../ContactView';
 
 function Section(){
   return (
-    <section id="section" className="container">
+    <section id="section" className="container mt-3">
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -18,7 +18,7 @@ function Section(){
             <About></About>
           </Route>
 
-          <Route exact path="/products">
+          <Route path="/products">
             <Products></Products>
           </Route>
 

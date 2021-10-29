@@ -17,6 +17,9 @@ function Nav(){
             <li className="nav-item">
                 <Link className="nav-link " to="/contact">Contato</Link>
             </li>
+            <li className="nav-item">
+                <Link className="nav-link " to="/contact/view">Lista de Contatos</Link>
+            </li>
         </ul>
     </nav>
   );
