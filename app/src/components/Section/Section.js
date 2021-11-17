@@ -4,7 +4,10 @@ import Home from '../Home';
 import About from '../About';
 import Products from '../Products';
 import Contact from '../Contact';
-import ContactView from '../ContactView';
+import ContactView from '../Admin/ContactView';
+import Login from '../Admin/Login';
+import HomeAdm from '../Admin/Home';
+import { isAdmin } from '../../Auth';
 
 function Section(){
   return (
@@ -25,12 +28,31 @@ function Section(){
           <Route exact path="/contact">
             <Contact></Contact>
           </Route>
-
-          <Route exact path="/contact/view">
-            <ContactView></ContactView>
+          
+          <Route exact path="/user/login">
+            <Login></Login>
           </Route>
+
+          <PrivateRoute exact path="/contact/view" component={ContactView} />
+
+          <PrivateRoute exact path="/admin/home" component={HomeAdm} />
         </Switch>
     </section>
   );
 } 
 export default Section;
+
+function PrivateRoute({component: Component, ...rest}) {
+  return (
+    <Route{...rest}
+    render = {
+      props => (
+        isAdmin() ? 
+        <Component {...props} />
+        :
+        console.log('não logado')
+      )
+    }
+    />
+  )
+}

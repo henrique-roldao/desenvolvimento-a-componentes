@@ -1,12 +1,20 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Api from '../../Api';
+import Api from '../../../Api';
+import { getToken } from '../../../Auth';
 
 function ContactView() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    Api.get('/contacts')
+    Api.get('/contacts', 
+      {
+        params : {},
+        headers : {
+          Authorization : "Bearer " + getToken()
+        }
+      }
+    )
     .then((response) => {
       setContacts(response.data);
     })
