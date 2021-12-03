@@ -1,71 +1,93 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router';
+import { useHistory ,useParams } from 'react-router-dom';
 import Api from '../../../Api';
-import { getToken } from '../../../Auth';
+import { getToken } from '../../../Auth'
 
-export default function ClientAdd() {
+export default function ClientUpdate() {
 
-    const { handleSubmit, register } = useForm();
+    let {idClient} = useParams();
+    const [client, setClient] = useState([]);
+    const { handleSubmit, register, reset } = useForm();
     const history = useHistory();
 
+    useEffect(() => {
+        Api.get(`/clients/${idClient}`,
+            {
+                params : {},
+                headers : {
+                    Authorization : "Bearer " + getToken()
+                }
+            }
+        ).then((response) => {
+            setClient(response.data);
+            reset(response.data)
+        })
+    },[idClient, reset]);
+
     const onSubmit = (data) => {
-        Api.post(
-            '/clients',
+        Api.put(`/clients/${client.idClient}`,
             {
                 name : data.name,
-                phone : data.phone,
                 email : data.email,
-                address: data.address
+                phone : data.phone,
+                address : data.address
             },
             {
                 headers : {
                     Authorization : "Bearer " + getToken()
                 }
             }
+        )       
+        .then(
+
         )
-        .then((response) => {
-            console.log(response.data);
-        })
         .finally(() => {
             history.push('/admin/client/view');
-            window.location.reload(true);
         })
     }
 
-    return (
+    return(
         <div className="row">
         <div className="col-sm-1"></div>
         <div className="col-sm-10">
-          <h1>Adicionando Cliente</h1>
+          <h1>Alterar Cliente</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
                   <label>Nome</label>
                   <input
                   {...register("name")} 
                   type="text"  
-                  className="form-control" />
+                  className="form-control"
+                  defaultValue={client.name}
+                  />
               </div>
               <div className="form-group">
                   <label>Email</label>
                   <input 
                   {...register("email")}
                   type="email" 
-                  className="form-control" />
+                  className="form-control" 
+                  defaultValue={client.email}
+                  />
               </div>
               <div className="form-group">
                   <label>Telefone</label>
                   <input
                   {...register("phone")} 
                   type="number" 
-                  className="form-control" />
+                  className="form-control" 
+                  defaultValue={client.phone}
+                  />
               </div>
               <div className="form-group">
                   <label>Endereço</label>
                   <input
                   {...register("address")} 
                   type="text" 
-                  className="form-control" />
+                  className="form-control" 
+                  defaultValue={client.address}
+                  />
               </div>
               <input type="submit" className="btn btn-primary" />
           </form>

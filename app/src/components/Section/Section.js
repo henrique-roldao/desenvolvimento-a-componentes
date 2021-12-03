@@ -11,6 +11,7 @@ import { isAdmin } from '../../Auth';
 import ContactResponse from '../Admin/ContactResponse';
 import ClientView from '../Admin/ClientView';
 import ClientAdd from '../Admin/ClientAdd';
+import ClientUpdate from '../Admin/ClientUpdate';
 
 function Section(){
   return (
@@ -39,6 +40,8 @@ function Section(){
           <PrivateRoute exact path="/admin/client/view" component={ClientView} />
 
           <PrivateRoute exact path="/admin/client/add" component={ClientAdd} />
+          
+          <PrivateRoute exact path="/admin/client/update/:idClient" component={ClientUpdate} />
 
           <PrivateRoute exact path="/admin/contact/view" component={ContactView} />
 

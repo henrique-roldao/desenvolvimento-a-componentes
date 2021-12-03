@@ -2,6 +2,7 @@ import React, { useState, useEffect }from 'react';
 import { useHistory } from 'react-router';
 import Api from '../../../Api';
 import { getToken } from '../../../Auth';
+import SearchBar from '../../commons/SearchBar';
 
 export default function ClientView() {
 
@@ -27,11 +28,31 @@ export default function ClientView() {
         history.push('/admin/client/add')
     }
 
+    const handleClickUpdate = (idClient) => {
+      history.push(`/admin/client/update/${idClient}`)
+    }
+  
+    const handleClickDelete = (idClient) => {
+      Api.delete(`/clients/${idClient}`, 
+        {},
+        {
+          headers: {
+            Authorization: "Bearer " + getToken()
+          }
+        }
+      )
+      .then(() => {
+        history.push('/admin/client/view');
+        window.location.reload(true);
+      })
+    }
+
     return (
         <div className="row">
         <div className="col-sm-1"></div>
           <div className="col-sm-10">
             <h1>Lista de clientes</h1>
+            <SearchBar path="/clients/search" handle={(data) => {setClients(data)}} />
             <button className="btn btn-primary mb-3" onClick={handleAddButton}>Adicionar Cliente</button>
             <table className="table table-striped">
               <thead>
@@ -41,6 +62,7 @@ export default function ClientView() {
                     <th>Email</th>
                     <th>Telefone</th>
                     <th>Endereço</th>
+                    <th colSpan="2">Ações</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,6 +73,18 @@ export default function ClientView() {
                         <td>{client.email}</td>
                         <td>{client.phone}</td>
                         <td>{client.address}</td>
+                        <td>
+                    <button onClick={() => handleClickUpdate(client.idClient)} 
+                    className="btn btn-primary">
+                      Alterar
+                    </button>
+                  </td>
+                  <td>
+                  <button onClick={() => handleClickDelete(client.idClient)} 
+                    className="btn btn-danger">
+                      Deletar
+                    </button>
+                    </td>
                     </tr>
                   )}
               </tbody>

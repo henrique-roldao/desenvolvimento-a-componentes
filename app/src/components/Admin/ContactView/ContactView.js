@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import Api from '../../../Api';
 import { getToken } from '../../../Auth';
+import SearchBar from '../../commons/SearchBar'
 
 function ContactView() {
   const [contacts, setContacts] = useState([]);
@@ -46,6 +47,7 @@ function ContactView() {
       <div className="col-sm-1"></div>
         <div className="col-sm-10">
           <h1>Lista de contatos</h1>
+          <SearchBar path="/contacts/search" handle={(data) => {setContacts(data)}} />
           <table className="table table-striped">
             <thead>
               <tr>
