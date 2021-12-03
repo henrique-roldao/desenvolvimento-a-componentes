@@ -8,6 +8,9 @@ import ContactView from '../Admin/ContactView';
 import Login from '../Admin/Login';
 import HomeAdm from '../Admin/Home';
 import { isAdmin } from '../../Auth';
+import ContactResponse from '../Admin/ContactResponse';
+import ClientView from '../Admin/ClientView';
+import ClientAdd from '../Admin/ClientAdd';
 
 function Section(){
   return (
@@ -33,9 +36,15 @@ function Section(){
             <Login></Login>
           </Route>
 
-          <PrivateRoute exact path="/contact/view" component={ContactView} />
+          <PrivateRoute exact path="/admin/client/view" component={ClientView} />
+
+          <PrivateRoute exact path="/admin/client/add" component={ClientAdd} />
+
+          <PrivateRoute exact path="/admin/contact/view" component={ContactView} />
 
           <PrivateRoute exact path="/admin/home" component={HomeAdm} />
+
+          <PrivateRoute path="/admin/contact/response/:idContact" component={ContactResponse} />
         </Switch>
     </section>
   );
